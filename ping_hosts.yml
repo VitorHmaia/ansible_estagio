@@ -1,0 +1,7 @@
+---
+- name: ping vm
+  hosts: oracle_vm
+  gather_facts: no
+  tasks:
+    - name: ping oracle vm to test!
+      ping: 

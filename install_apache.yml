@@ -1,8 +1,12 @@
 ---
 
-- hosts: all
+- hosts: oracle_vm
   become: true
   tasks: 
+  - name: install updates
+    apt:
+      upgrade: dist
+      update_cache: yes
 
   - name: install apache2 and php
     package:

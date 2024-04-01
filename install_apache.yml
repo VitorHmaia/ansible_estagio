@@ -1,13 +1,28 @@
 ---
 
-- hosts: all
+- hosts: oracle_vm
   become: true
   tasks: 
-  
-  - name: update repository index
+  - name: install updates
+    tags: always
     apt:
-      update_cache: yes 
-  
-  - name: install apache2 package
-    apt:
-      name: apache2
+      upgrade: dist
+      update_cache: yes
+
+  - name: install apache2 and php
+    tags: apache,php,ubuntu
+    package:
+      name: 
+        - "{{ apache_package  }}"
+        - "{{ php_package }}"
+      state: latest
+      update_cache: yes
+
+  - name: copy default html file for site
+    tags: apache,php,ubuntu
+    copy:
+      src: default_site.html
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: 0644

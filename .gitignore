@@ -1,0 +1,3 @@
+#Ignore env configurations and hosts of Ansible
+.env
+.hosts 

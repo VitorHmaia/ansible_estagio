@@ -1,3 +1,4 @@
 #Ignore env configurations and hosts of Ansible
 .env
-hosts 
+
+./ansible_estagio/hosts 

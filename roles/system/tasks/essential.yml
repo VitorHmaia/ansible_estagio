@@ -1,0 +1,11 @@
+---
+- name: Update packages
+  tags: always
+  apt:
+    upgrade: yes
+    update_cache: yes
+
+- name: Install essential packages
+  package:
+    name: "{{ packages }}"
+    state: latest

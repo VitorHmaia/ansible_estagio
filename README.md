@@ -16,6 +16,20 @@ Ansible é uma ferramenta de automação de TI open-source que simplifica a auto
 
 - **Conectividade SSH:** Os hosts que você deseja gerenciar com o Ansible devem ter conectividade SSH habilitada e permitir login com as credenciais necessárias.
 
+- **IDEs:** Qualquer IDE ou editor de texto pode ser usado para editar arquivos YAML e de script Ansible. Exemplos incluem Visual Studio Code, Sublime Text e Vim.
+
+- **Docker:** O projeto requer Docker para ser executado. Certifique-se de ter o Docker instalado em sua máquina.
+
+## Onde Aplicar o Ansible?
+
+## Requisitos Não Funcionais
+
+- **Conhecimento em YAML:** Como o Ansible utiliza YAML para definir configurações e tarefas, é útil ter familiaridade com a sintaxe YAML.
+  
+- **Conhecimento em SSH:** O Ansible se comunica com os hosts por meio do SSH, portanto, entender os conceitos básicos de SSH é necessário para usar o Ansible com eficácia.
+
+- **Conhecimento em Bash/Shell:** É necessário conhecimento intermediário com comandos Bash, visto que o código que será implementado nos playbooks e roles utilizam a arquitetura UNIX
+
 ## Onde Aplicar o Ansible?
 
 Ansible pode ser aplicado em uma variedade de cenários, incluindo:
@@ -43,6 +57,31 @@ Enquanto o Ansible e o Terraform compartilham alguns objetivos comuns, eles dife
   - Mais adequado para provisionamento de infraestrutura em nuvem.
 
 Ambas as ferramentas podem ser complementares e utilizadas em conjunto para atender a diferentes necessidades de automação.
+
+## Como Executar o Projeto
+
+Para executar este projeto, siga as etapas abaixo:
+
+1. Certifique-se de ter o Docker instalado em sua máquina.
+
+2. Clone este repositório em sua máquina local:
+   ```
+   git clone https://github.com/VitorHmaia/ansible_estagio/
+   ```
+   
+3. Navegue até o diretório clonado:
+   ```
+   cd ansible-repository
+   ```
+   
+4. Construa a imagem Docker utilizando o Dockerfile fornecido:
+   ```
+   docker build -t ansible-container .
+   ```
+5. Após a construção da imagem, você pode iniciar um contêiner Docker com o Ansible instalado:
+   ```
+   docker run -it ansible-container /bin/bash
+   ```
 
 ## Contribuindo
 

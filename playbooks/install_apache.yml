@@ -1,6 +1,6 @@
 ---
 
-- hosts: oracle_vm
+- hosts: all
   become: true
   tasks: 
   - name: install updates
@@ -17,12 +17,3 @@
         - "{{ php_package }}"
       state: latest
       update_cache: yes
-
-  - name: copy default html file for site
-    tags: apache,php,ubuntu
-    copy:
-      src: default_site.html
-      dest: /var/www/html/index.html
-      owner: root
-      group: root
-      mode: 0644
